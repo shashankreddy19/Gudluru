@@ -28,7 +28,8 @@ const Text=styled.div`
     width: 75%;
     font-size: 15px;
 `
-const Register=styled.div`
+const Register=styled.a`
+        text-decoration: none;
         position: absolute;
         color: azure;
         top:540px;
@@ -119,7 +120,7 @@ const Hero = () => {
                         B 2 C
                     </RButton>
                 </Center> */}
-            <Register>
+            <Register href='/register'>
                 Register
                 <i class="fa-solid fa-right-to-bracket" ></i>
             </Register>

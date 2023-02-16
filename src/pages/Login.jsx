@@ -1,16 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import styled from 'styled-components'
-import limg from '../Images/Limg.png'
+import limg from '../Images/Login.png'
 const Container=styled.div`
-  padding: 100px 100px 0px 60px;
+  padding: 150px 150px 0px 60px;
   display: flex;
   align-items: center;
   flex-direction: row;
 `
 const Left=styled.div`
-  
-  
+  position: relative;
+  bottom: 0;
 `
 const Lm=styled.img`
   width: 60%;

@@ -129,7 +129,7 @@ const Navbar = () => {
             <Menuitem href="#">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 </Menuitem >
-                <Active href="#">
+                <Active href="/">
                         Home
                 </Active>
                 <Menuitem href="#">
@@ -141,10 +141,10 @@ const Navbar = () => {
                 <Menuitem href="#">
                     Help 
                 </Menuitem>
-                <Signin href="#">
+                <Signin href="/login">
                     Login/Sign-in 
                 </Signin>
-                <Menuitem href="#">
+                <Menuitem href="/cart">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </Menuitem >
             </Right>

@@ -27,6 +27,12 @@ const App=()=>{
             <Routes>
                 <Route path="/cart" element={<Cart/>}/>
             </Routes>
+            <Routes>
+                <Route path="/login" element={<Login/>}/>
+            </Routes>
+            <Routes>
+                <Route path="/register" element={<Register/>}/>
+            </Routes>
         </Router>
     );
 };
