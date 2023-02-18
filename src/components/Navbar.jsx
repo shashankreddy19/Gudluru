@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Container=styled.div`
@@ -8,12 +8,20 @@ const Container=styled.div`
     font-family: 'Ubuntu', sans-serif;
     color: #1f2525;
     border-radius: 0px 0px 5px 5px;
+    @media (max-width: 768px)
+    {
+        width: 100%;
+        padding: 12px 50px;
+        position: relative;
+    }
 `
+
 const Wrapper=styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
 `
+
 const Center=styled.div`
     color: #36312e;
     padding: 5px 15px;
@@ -22,11 +30,39 @@ const Center=styled.div`
     font-size: 35px;
 `
 
+const Icon=styled.div`
+cursor: pointer;
+    display: none;
+    @media (max-width: 768px)
+    {
+        display: block;
+    }
+`
+
 const Right=styled.div`
-position: relative;
+    position: relative;
     display: flex;
     align-items: center;
+    @media (max-width: 768px)
+    {
+        width: 45%;
+        height: 50vh;
+        z-index: 99;
+        padding: 20px 30px 10px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: absolute;
+        top:45px;
+        right: 45px;
+        border-radius: 10px;
+        background-color: #e9bfa2;
+        box-shadow: 0px 3px 9px #b9b2ae;
+        display: ${(props) => (props.close ? "flex":"none")};
+    }
 `
+
 const Menuitem =styled.a`
     text-decoration: none;
     display: block;
@@ -35,10 +71,23 @@ const Menuitem =styled.a`
     color: #000000;
     font-family: 'Comfortaa', cursive;
     &:hover{
-        color: #d47945;
+        color: #da7337;
         transition: 0.1s ease-in-out;
+        &:not(:last-child,:first-child) 
+        {
+            border-bottom: 1px solid #934214;
+        }
     }
+    /* @media (max-width: 768px)
+    {
+        &:not(:first-child)
+        {
+            display: none;
+        }
+    } */
+
 `
+
 const Left=styled.div`
 
     display: flex;
@@ -49,7 +98,13 @@ const Left=styled.div`
     border-radius: 10px;
     font-style: oblique;
     font-weight: 500;
+    @media (max-width: 768px)
+    {
+        max-width: fit-content;
+        font-weight: 300;
+    }
 `
+
 const LButton=styled.a`
    text-decoration: none;
    padding: 7px;
@@ -58,7 +113,13 @@ const LButton=styled.a`
    font-size: 15px;
    color: #000000;
    border: none;
+   @media (max-width: 768px)
+    {
+        padding: 4px;
+        font-size: 10px;
+    }
 `
+
 const RButton=styled.a`
     text-decoration: none;
     cursor: pointer;
@@ -74,7 +135,13 @@ const RButton=styled.a`
         box-shadow: 0px 2px 4px gray;
         transition: 0.1s ease-in-out;
    }
+   @media (max-width: 768px)
+    {
+        padding: 4px;
+        font-size: 7px;
+    }
 `
+
 const Active=styled.a`
     text-decoration: none;
     display: block;
@@ -92,7 +159,10 @@ const Active=styled.a`
         left: 117px;
         background-color: #d47945;
     }
+
+
 `
+
 const Signin=styled.a`
     text-decoration: none;
     margin-left: 40px;
@@ -108,49 +178,69 @@ const Signin=styled.a`
         transition: 0.1s ease-in-out;
         box-shadow: 0px 1px 2px gray;
     }
+    @media(max-width: 768px)
+    {
+        margin-left: 20px;
+    }
 `
 
-const Navbar = () => {
-  return (
-    <Container>
-        <Wrapper>
-            <Left>
-            <LButton href="#">
-                    B 2 C
-                </LButton>
-                <RButton href="#">
-                    B 2 B
-                </RButton>
-            </Left>
-            <Center>
-                Gudluru 
-            </Center>
-            <Right>
-            <Menuitem href="#">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                </Menuitem >
-                <Active href="/">
-                        Home
-                </Active>
-                <Menuitem href="#">
-                    About Us 
-                </Menuitem >
-                <Menuitem href="#">
-                Services 
-                </Menuitem>
-                <Menuitem href="#">
-                    Help 
-                </Menuitem>
-                <Signin href="/login">
-                    Login/Sign-in 
-                </Signin>
-                <Menuitem href="/cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </Menuitem >
-            </Right>
-        </Wrapper>
-    </Container>
-  )
+class Navbar extends Component {
+    state={clicked:false};
+    handleClick =()=>{
+        this.setState({
+            clicked:!this.state.clicked
+        });
+        this.props.closeNav(this.state.clicked);
+    }
+
+    render()
+    {
+        return (
+            <Container>
+                <Wrapper>
+                    <Left>
+                    <LButton href="#">
+                            B 2 C
+                        </LButton>
+                        <RButton href="#">
+                            B 2 B
+                        </RButton>
+                    </Left>
+                    <Center>
+                        Gudluru 
+                    </Center>
+                    
+                    <Right close={this.state.clicked}>
+                        <Menuitem href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </Menuitem >
+                        <Menuitem href="/">
+                                Home
+                        </Menuitem>
+                        <Menuitem href="#">
+                            About Us 
+                        </Menuitem >
+                        <Menuitem href="#">
+                        Services 
+                        </Menuitem>
+                        <Menuitem href="#">
+                            Help 
+                        </Menuitem>
+                        <Signin href="/login">
+                            Login/Sign-in 
+                        </Signin>
+                        <Menuitem href="/cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </Menuitem >
+                    </Right>
+                    <Icon onClick={this.handleClick} >
+                        <i  className={this.state.clicked ? 
+                            "fas fa-times" :"fas fa-bars"}></i>
+                    </Icon>
+                </Wrapper>
+            </Container>
+        )
+    }
 }
 
 export default Navbar

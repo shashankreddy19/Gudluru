@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Navbar from '../components/Navbar'
 // import Announcement from '../components/Announcement'
 // import Slider from '../components/Slider';
@@ -8,18 +8,34 @@ import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero'
 
-const Home = () => {
+class Home extends Component{
+  constructor() {
+    super();
+    this.state={
+      clicked:false
+    };
+  }
+  handleClick(newClicked)
+  {
+    this.setState({
+      clicked:  newClicked
+    });
+  }
+  
+  render()
+  {
     return ( 
       <div>
         {/* <Announcement/> */}
-        <Navbar/>
-        <Hero/>
+        <Navbar closeNav={this.handleClick.bind(this)}/>
+        <Hero isClicked={this.state.clicked}/>
         <Categories/>
         <Products/>
         <Newsletter/>
         <Footer/>
       </div>
     )
+  }
   }
   
   export default Home

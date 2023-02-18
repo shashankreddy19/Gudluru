@@ -51,6 +51,7 @@ const Register=styled.a`
 `
 const Imgcontainer=styled.div`
    max-width: fit-content;
+   display: ${(props)=> props.isClicked ? "none" : "block"};
 `
 
 const Img=styled.img`
