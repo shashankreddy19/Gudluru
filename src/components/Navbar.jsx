@@ -8,12 +8,12 @@ const Container=styled.div`
     font-family: 'Ubuntu', sans-serif;
     color: #1f2525;
     border-radius: 0px 0px 5px 5px;
-    @media (max-width: 768px)
+    @media (max-width: 786px)
     {
-        width: 100%;
         padding: 12px 50px;
         position: relative;
     }
+
 `
 
 const Wrapper=styled.div`
@@ -31,9 +31,9 @@ const Center=styled.div`
 `
 
 const Icon=styled.div`
-cursor: pointer;
+    cursor : pointer;
     display: none;
-    @media (max-width: 768px)
+    @media (max-width: 786px)
     {
         display: block;
     }
@@ -43,7 +43,7 @@ const Right=styled.div`
     position: relative;
     display: flex;
     align-items: center;
-    @media (max-width: 768px)
+    @media (max-width: 786px)
     {
         width: 45%;
         height: 50vh;
@@ -54,18 +54,23 @@ const Right=styled.div`
         justify-content: space-between;
         align-items: flex-start;
         position: absolute;
-        top:45px;
-        right: 45px;
+        top:55px;
+        right: 48px;
         border-radius: 10px;
         background-color: #e9bfa2;
         box-shadow: 0px 3px 9px #b9b2ae;
         display: ${(props) => (props.close ? "flex":"none")};
+    }
+    @media (max-width: 920px)
+    {
+       font-size: 13px;
     }
 `
 
 const Menuitem =styled.a`
     text-decoration: none;
     display: block;
+    font-size: 14px;
     margin-left: 20px;
     padding: 10px;
     color: #000000;
@@ -78,92 +83,35 @@ const Menuitem =styled.a`
             border-bottom: 1px solid #934214;
         }
     }
-    /* @media (max-width: 768px)
+    @media (max-width: 1160px)
     {
-        &:not(:first-child)
-        {
-            display: none;
-        }
-    } */
-
-`
-
-const Left=styled.div`
-
-    display: flex;
-    width:90px;
-    align-items: center;
-    padding: 4px;
-    background-color:#d47945;
-    border-radius: 10px;
-    font-style: oblique;
-    font-weight: 500;
-    @media (max-width: 768px)
-    {
-        max-width: fit-content;
-        font-weight: 300;
-    }
-`
-
-const LButton=styled.a`
-   text-decoration: none;
-   padding: 7px;
-   border-radius: 5px 0px 0px 5px;
-   background-color: #fae9dd;
-   font-size: 15px;
-   color: #000000;
-   border: none;
-   @media (max-width: 768px)
-    {
-        padding: 4px;
-        font-size: 10px;
-    }
-`
-
-const RButton=styled.a`
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 0px 5px 5px 0px;
-    font-size: 10px;
-    padding: 7px;
-    background-color: #484343b3;
-    color: #ffffff96;
-    border: none;
-    &:hover{
-        background-color: #fae9dd;
-        color: #000000;
-        box-shadow: 0px 2px 4px gray;
-        transition: 0.1s ease-in-out;
-   }
-   @media (max-width: 768px)
-    {
-        padding: 4px;
-        font-size: 7px;
-    }
-`
-
-const Active=styled.a`
-    text-decoration: none;
-    display: block;
-    margin-left: 40px;
-    font-family: 'Comfortaa', cursive;
-    padding: 10px;
-    color: #d47945;
-    &::after
-    {
-        content: '';
-        width: 33px;
-        height: 1.8px;
-        position: absolute;
-        top: 27px;
-        left: 117px;
-        background-color: #d47945;
+        font-size: 12px;
+        margin-left: 15px;
     }
 
-
 `
+
+// const Active=styled.a`
+//     text-decoration: none;
+//     display: block;
+//     margin-left: 40px;
+//     font-family: 'Comfortaa', cursive;
+//     padding: 10px;
+//     color: #d47945;
+//     &::after
+//     {
+//         content: '';
+//         width: 33px;
+//         height: 1.8px;
+//         position: absolute;
+//         top: 27px;
+//         left: 117px;
+//         background-color: #d47945;
+//     }
+// `
 
 const Signin=styled.a`
+    font-size: 14px;
     text-decoration: none;
     margin-left: 40px;
     display: block;
@@ -178,11 +126,83 @@ const Signin=styled.a`
         transition: 0.1s ease-in-out;
         box-shadow: 0px 1px 2px gray;
     }
-    @media(max-width: 768px)
+    @media(max-width: 786px)
     {
         margin-left: 20px;
     }
+    @media (max-width: 1140px)
+    {
+       font-size: 12px;
+    }
 `
+const Left=styled.div`
+
+    display: flex;
+    width:fit-content;
+    align-items: center;
+    padding: 4px;
+    background-color:#d47945;
+    border-radius: 10px;
+    font-style: oblique;
+    font-weight: 500;
+    @media (max-width: 786px)
+    {
+        width: fit-content;
+        font-weight: 300;
+    }
+    @media (max-width: 1140px)
+    {
+        width: fit-content;
+        font-size: 12px;
+    }
+`
+
+const LButton=styled.a`
+   text-decoration: none;
+   padding: 7px;
+   border-radius: 5px 0px 0px 5px;
+   background-color: #fae9dd;
+   font-size: 12px;
+   color: #000000;
+   border: none;
+   @media (max-width: 920px)
+    {
+        padding: 6px;
+        font-size: 10px;
+    }
+   @media (max-width: 786px)
+    {
+        padding: 4px;
+        font-size: 8px;
+    }
+`
+
+const RButton=styled.a`
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 8px;
+    padding: 7px;
+    background-color: #484343b3;
+    color: #ffffff96;
+    border: none;
+    @media (max-width: 920px)
+    {
+        font-size: 6px;
+    }
+    &:hover{
+        background-color: #fae9dd;
+        color: #000000;
+        box-shadow: 0px 2px 4px gray;
+        transition: 0.1s ease-in-out;
+   }
+   @media (max-width: 786px)
+    {
+        padding: 4px;
+        font-size: 5px;
+    }
+`
+
 
 class Navbar extends Component {
     state={clicked:false};
@@ -190,7 +210,7 @@ class Navbar extends Component {
         this.setState({
             clicked:!this.state.clicked
         });
-        this.props.closeNav(this.state.clicked);
+        // this.props.closeNav(this.state.clicked);
     }
 
     render()
@@ -218,7 +238,7 @@ class Navbar extends Component {
                                 Home
                         </Menuitem>
                         <Menuitem href="#">
-                            About Us 
+                            About
                         </Menuitem >
                         <Menuitem href="#">
                         Services 
@@ -227,7 +247,7 @@ class Navbar extends Component {
                             Help 
                         </Menuitem>
                         <Signin href="/login">
-                            Login/Sign-in 
+                            Login
                         </Signin>
                         <Menuitem href="/cart">
                             <i class="fa-solid fa-cart-shopping"></i>

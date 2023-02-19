@@ -1,132 +1,139 @@
 import React from 'react'
 import styled from 'styled-components'
-import './Hero.css'
 import Img1 from '../Images/battery.gif'
-const Content=styled.div`
-   margin-left: 400px;
+
+const Container =styled.div`
+    padding: 142px 120px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+    border-bottom:2px solid black ;
+    @media (max-width: 786px)
+    {
+        padding: 80px;
+    }
 `
-const Desc=styled.p`
-    
-    position: absolute;
-    color: #0c0c0c;
-    top:120px;
-    right:20px;
-    font-family: 'Comfortaa', cursive;
-    font-size: 10px;
-`
-const H2=styled.h2`
-    margin-top: 70px;
-    font-family: 'Comfortaa', cursive;
-    font-size: 40px;
-`
-const H1=styled.h1`
-    font-family:'Dancing Script', cursive;
-    font-size: 80px;
-`
-const Text=styled.div`
-    margin-top: 110px;
-    width: 75%;
-    font-size: 15px;
-`
-const Register=styled.a`
-        text-decoration: none;
-        position: absolute;
-        color: azure;
-        top:540px;
-        right: 280px;
-        font-family: 'Comfortaa', cursive;
-        font-size: 20px;
-        display: block;
-        padding: 10px;
-        background-color: #d47945;
-        border-radius: 10px;
-        color: #fffefd;
-        &:hover{
-            background-color: #ff5e00;
-            transform: scale(1.1);
-            transition: 0.1s ease-in-out;
-            box-shadow: 0px 1px 4px #68635f;
-        }
-        cursor: pointer;
-`
+
 const Imgcontainer=styled.div`
    max-width: fit-content;
-   display: ${(props)=> props.isClicked ? "none" : "block"};
 `
 
 const Img=styled.img`
-    width: 100%;
+    width: 90%;
+    @media (max-width: 786px)
+    {
+        width: 80%;
+    }
 `
-// const Center=styled.div`
-//     position: absolute;
-//     top: 160px;
-//     right: 360px;
-//     display: flex;
-//     width:93px;
-//     align-items: center;
-//     padding: 5px;
-//     background-color:#ff5e00;
-//     border-radius: 4px;
-//     font-style: oblique;
-//     font-weight: 500;
-// `
-// const LButton=styled.a`
-//    text-decoration: none;
-//    padding: 8px;
-//    border-radius: 5px 0px 0px 5px;
-//    background-color: #ffffffa3;
-//    color: #001010;
-//    border: none;
-// `
-// const RButton=styled.a`
-//     text-decoration: none;
-//     cursor: pointer;
-//     border-radius: 0px 5px 5px 0px;
-//     font-size: 10px;
-//     padding: 8px;
-//     background-color: #484343b3;
-//     color: #f0ffff97;
-//     border: none;
-//     &:hover{
-//         background-color: #ffffffa6;
-//         color: #000000;
-//         box-shadow: 0px 2px 4px gray;
-//         transition: 0.1s ease-in-out;
-//    }
-// `
+
+const Content=styled.div`
+    width: fit-content;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+`
+const Desc=styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #0c0c0c;
+    font-family: 'Comfortaa', cursive;
+    font-size: 10px;
+`
+const H2=styled.div`
+    font-family: 'Comfortaa', cursive;
+    font-size: 35px;
+    @media (max-width: 786px)
+    {
+        font-size: 20px;
+    }
+`
+const H1=styled.div`
+    font-family:'Dancing Script', cursive;
+    font-size: 80px;
+    @media (max-width: 786px)
+    {
+        font-size: 30px;
+    }
+`
+const Text=styled.div`
+    font-size: 15px;
+    @media (max-width: 786px)
+    {
+        font-size: 10px;
+    }
+`
+const Subtext=styled.div`
+    font-size: 15px;
+    text-align: right;
+    @media (max-width: 786px)
+    {
+        font-size: 10px;
+    }
+`
+const Register=styled.a`
+    text-decoration: none;
+    width: fit-content;
+    color: azure;
+    font-family: 'Comfortaa', cursive;
+    font-size: 17px;
+    display: block;
+    padding: 10px;
+    background-color: #d47945;
+    border-radius: 10px;
+    color: #fffefd;
+    .fa-solid
+    {
+        margin-left: 10px;
+    }
+    &:hover{
+        background-color: #ff5e00;
+        transform: scale(1.1);
+        transition: 0.1s ease-in-out;
+        box-shadow: 0px 1px 4px #68635f;
+    }
+    cursor: pointer;
+    @media (max-width: 786px)
+    {
+        padding: 7px;
+        font-size: 8px;
+        .fa-solid
+        {
+            margin-left: 5px;
+        }
+    }
+    
+`
+
+
 
 const Hero = () => {
   return (
-    <div className="container">
+    <Container className="container">
         <Imgcontainer>
             <Img src={Img1} alt="" />
         </Imgcontainer>
         <Content>
             <Desc>
                 <H1>Welcome !</H1>
-                <br></br>
                 <Text>
                 “Shutting off the thought process is not rejuvenating,
                  the mind is like a car battery 
-                  it recharges by running.” ~ Bill Watterson
+                  it recharges by running.” <Subtext>~ Bill Watterson</Subtext>
                   </Text>
-                <br></br>
                 <H2>Battery spare parts</H2>
             </Desc>
-            {/* <Center>
-                    <LButton href="#">
-                        B 2 B
-                    </LButton>
-                    <RButton href="#">
-                        B 2 C
-                    </RButton>
-                </Center> */}
             <Register href='/register'>
                 Register
                 <i class="fa-solid fa-right-to-bracket" ></i>
             </Register>
         </Content>
-    </div>
+    </Container>
   )
 }
 

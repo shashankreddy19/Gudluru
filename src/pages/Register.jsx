@@ -14,8 +14,8 @@ const Right=styled.div`
   height: 470px;
 `
 const Lm=styled.img`
-position: absolute;
-bottom: 0;
+  position: absolute;
+  bottom: 0;
   width: 100%;
 `
 const Left=styled.div`
