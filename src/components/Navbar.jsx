@@ -25,7 +25,7 @@ const Wrapper=styled.div`
 const Center=styled.div`
     color: #36312e;
     padding: 5px 15px;
-    font-family:'Dancing Script', cursive;
+    font-family: 'Signika Negative', sans-serif;
     font-weight: bold;
     font-size: 35px;
 `
