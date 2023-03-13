@@ -1,7 +1,7 @@
 import Search from '@mui/icons-material/Search'
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import React from 'react'
+import React,{useLayoutEffect} from 'react'
 import styled from 'styled-components'
 
 
@@ -79,6 +79,9 @@ const Icon=styled.div`
 
 
 const Product = ({item}) => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+});
   return (
      <Maincontainer>
       <Container>

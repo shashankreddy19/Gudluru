@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
+import gudluru from '../Images/gudluruLogo.jpg'
 const Container=styled.div`
     position: sticky;
     padding: 12px 150px;
@@ -227,6 +227,7 @@ class Navbar extends Component {
                         </RButton>
                     </Left>
                     <Center>
+                        {/* <img src={gudluru} height={"40px"} width={"40px"} ></img> */}
                         Gudluru 
                     </Center>
                     
