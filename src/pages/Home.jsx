@@ -9,26 +9,28 @@ import Footer from '../components/Footer';
 import Hero from '../components/Hero'
 
 class Home extends Component{
-  constructor() {
-    super();
-    this.state={
-      clicked:false
-    };
-  }
-  handleClick(newClicked)
-  {
-    this.setState({
-      clicked:  newClicked
-    });
-  }
+  // constructor() {
+  //   super();
+  //   this.state={
+  //     clicked:false
+  //   };
+  // }
+  // handleClick(newClicked)
+  // {
+  //   this.setState({
+  //     clicked:  newClicked
+  //   });
+  // }
   
   render()
   {
     return ( 
       <div>
         {/* <Announcement/> */}
-        <Navbar closeNav={this.handleClick.bind(this)}/>
-        <Hero isClicked={this.state.clicked}/>
+        {/* closeNav={this.handleClick.bind(this)} */}
+        <Navbar />
+        {/* isClicked={this.state.clicked} */}
+        <Hero />
         <Categories/>
         <Products/>
         <Newsletter/>

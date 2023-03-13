@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import styled from 'styled-components'
 import limg from '../Images/Login.png'
+import { Link } from 'react-router-dom'
+
 const Container=styled.div`
   padding: 150px 150px 0px 60px;
   display: flex;
@@ -44,12 +46,12 @@ const Button=styled.button`
     padding: 5px 12px;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0px 1px 3px #ff5e00;
+    box-shadow: 0px 1px 3px #cf723c;
     font-family: 'Space Grotesk', sans-serif;
     transition: 100ms;
     &:hover
     {
-      background-color: #ff5e00;
+      background-color: #ce6a30;
     box-shadow: 0px 1px 5px rgb(49, 48, 49);
     }
 `
@@ -62,7 +64,7 @@ const Extra=styled.div`
     background-color: #000000;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 3px 0px 8px #ff5e00;
+    box-shadow: 1px 2px 4px #d16e35;
 `
 const Ep=styled.div`
       font-family: 'Fira Sans Extra Condensed', sans-serif;
@@ -78,7 +80,7 @@ const Ea=styled.div`
     transition: 100ms;
     &:hover
     {
-      text-shadow:0px 2px 4px rgb(255, 255, 255);
+      text-shadow:0px 1px 2px rgb(166, 137, 137);
     }
 
 `
@@ -105,14 +107,16 @@ const Login = () => {
                 <br></br>
                 <Input type="password" name="re-password" placeholder="Re-enter your password" required></Input>
                 <div>
-                    <Button type="submit">Create Account</Button>
+                    <Button type="submit">Login</Button>
                 </div>
             </form>
             <br></br>
             <br></br>
             <Extra>
                 <div>
-                    <Ep>Already have an account? <Ea id="signin" href="#">Sign-in</Ea> </Ep>
+                  <Link to="/register" style={{textDecoration:"none"}} >
+                    <Ep>Already have an account? <Ea id="signup" href="#">Sign-up</Ea> </Ep>
+                  </Link>
                 </div>
                 <div>
                     <Ea href="forgetpassword.html">Forgot password?</Ea>
