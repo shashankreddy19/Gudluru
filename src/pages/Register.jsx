@@ -1,79 +1,129 @@
-import styled from "styled-components"
-import { mobile } from "../responsive"
-
+import React from 'react'
+import styled from 'styled-components'
+import limg from '../Images/Register.png'
 const Container=styled.div`
-    width:100vw;
-    height: 100vh;
-    background: 
-    linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),
-    url("https://cdn.wallpapersafari.com/73/96/42r6Cy.jpg") ;
-    //object-fit: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-const Wrapper=styled.div`
-  width: 40%;
-  ${mobile({width:"75%"})};
-  padding: 20px;
-  background-color:white;
-`
-const Title=styled.h1`
-  font-size: 24px;
-  font-weight: 300;
-`
-const Form=styled.form`
+  padding: 150px ;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+`
+const Right=styled.div`
+  position: relative;
+  width: 500px;
+  height: 470px;
+`
+const Lm=styled.img`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+`
+const Left=styled.div`
+    position: relative;
+    border: 2px solid black;
+    width: 40%;
+    padding: 30px 30px 0;
 `
 const Input=styled.input`
-  flex: 1;
-  min-width: 40%;
-  margin: 20px 10px 0 0;
-  padding: 10px;
+      border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    width: 100%;
+    margin: 10px 0 30px;
+    &:focus
+    {
+      outline: none;
+    }
 `
-const Agreement=styled.span`
-  font-size: 12px;
-  margin: 20px 0;
+const Label=styled.label`
+      font-family: 'Ubuntu';
+    font-weight: 600;
 `
 const Button=styled.button`
-  width: 40%;
-  border: none;
-  padding: 15px 20px;
-  background-color:teal;
-  color: white;
-  cursor: pointer;
-  &:hover{
-    opacity: 0.8;
-    outline: 1px solid black;
-    outline-offset:2px;
-    transition:0.6s;
+      background-color: rgb(0, 0, 0);
+    border: none;
+    color: azure;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 1px 3px #ff5e00;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: 100ms;
+    &:hover
+    {
+      background-color: #ff5e00;
+    box-shadow: 0px 1px 5px rgb(49, 48, 49);
+    }
+`
+const Extra=styled.div`
+      border-radius: 15px 15px 0 0;
+    position: absolute;
+    display: flex;
+    padding: 10px 30px;
+    position: relative;
+    background-color: #000000;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 0px 8px #ff5e00;
+`
+const Ep=styled.div`
+      font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 14px;
+    color: aliceblue;
+` 
+const Ea=styled.div`
+      text-decoration: none;
+      cursor: pointer;
+    color: #d66a4c;
+    font-size: 17px;
+    font-family: 'Raleway', sans-serif;
+    transition: 100ms;
+    &:hover
+    {
+      text-shadow:0px 2px 4px rgb(255, 255, 255);
+    }
 
-  }
 `
 
 
-const Register = () => {
+const Login = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-            <Input placeholder="name"/>
-            <Input placeholder="last name"/>
-            <Input placeholder="username"/>
-            <Input placeholder="email"/>
-            <Input placeholder="password"/>
-            <Input placeholder="confirm password"/>
-            <Agreement>
-                By creating an account, I consent to the processing of my personal data in accodance with the 
-                <b> PRIVACY POLICY</b>
-            </Agreement>
-            <Button>CREATE</Button>
-        </Form>
-      </Wrapper>
-    </Container>
+    <div>
+      <Container>
+        <Left>
+        <form action="">
+                <Label for="username">Username/Email </Label>
+                <br></br>
+                <Input type="text" name="username" placeholder="Enter your email" required></Input>
+                <br></br>
+                <Label for="password">Password </Label>
+                <br></br>
+                <Input type="password" name="password" placeholder="Enter your password" required></Input>
+                <Label for="password">Confirm Password </Label>
+                <br></br>
+                <Input type="password" name="re-password" placeholder="Re-enter your password" required></Input>
+                <div>
+                    <Button type="submit">Create Account</Button>
+                </div>
+            </form>
+            <br></br>
+            <br></br>
+            <Extra>
+                <div>
+                    <Ep>Already have an account? <Ea id="signin" href="#">Sign-in</Ea> </Ep>
+                </div>
+                <div>
+                    <Ea href="forgetpassword.html">Forgot password?</Ea>
+                </div>
+            </Extra>
+        </Left>
+        <Right>
+          <Lm src={limg} alt="" />
+        </Right>
+      </Container>
+    </div>
   )
 }
 
-export default Register
+export default Login

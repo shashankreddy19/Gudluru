@@ -10,6 +10,7 @@ const Container=styled.div`
     ${mobile({padding:"0",flexDirection:"column"})};
 `
 const Main=styled.div`
+
   padding: 20px 150px;
 `
 const H1=styled.h1`
