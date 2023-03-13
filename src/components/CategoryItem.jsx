@@ -9,12 +9,12 @@ position: relative;
     height:48.5vh;
     position: relative;
     border-radius: 20px;
-    background-color: #db8e61;
-    box-shadow: 0px 4px 2px #9c897e;
+    background-color: #f0b18c;
+    box-shadow: 0px 2px 2px #9c897e;
     &:hover
     {
-      box-shadow: 2px 4px 4px #9c897e;
-      transform: scale(1.05);
+      box-shadow: 2px 2px 5px #9c897e;
+      transform: scale(1.03);
       transition: 0.15s ease-in ;
     }
 `

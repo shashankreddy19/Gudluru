@@ -15,7 +15,7 @@ const Main=styled.div`
 `
 const H1=styled.h1`
   font-size: 40px;
-  color: #e3830d;
+  color: #e68938;
     font-family:'Dancing Script', cursive;
 `
 const Categories = () => {

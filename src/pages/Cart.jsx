@@ -16,7 +16,9 @@ import { mobile } from '../responsive'
 
  
 
-const Container=styled.div``
+const Container=styled.div`
+    
+`
 
 const Wrapper=styled.div`
 
@@ -44,10 +46,15 @@ const Top=styled.div`
 
     padding: 20px;
 
+
+`
+const bo=styled.p`
+    font-family: 'Ubuntu', sans-serif;
 `
 
 const TopButton=styled.button`
 
+font-family: 'Comfortaa', cursive;
     padding:10px;
 
     font-weight: 600;
@@ -65,6 +72,7 @@ const TopButton=styled.button`
 `
 
 const TopTexts=styled.div`
+    
 
     ${mobile({display:"none"})};
 
@@ -72,13 +80,18 @@ const TopTexts=styled.div`
 
 const TopText=styled.span`
 
-    text-decoration: underline;
+    font-family: 'Ubuntu', sans-serif;
 
+    text-decoration: none;
+    padding-bottom: 8px;
     margin:0 10px;
 
     cursor: pointer;
 
-   
+    &:hover
+    {
+        border-bottom: 1px solid #d47945;
+    }
 
 `
 
@@ -276,6 +289,8 @@ const Button=styled.button`
 
     background-color: #d47945;
 
+    font-family: 'Comfortaa', cursive;
+
     color: white;
 
     font-weight: 600;
@@ -284,7 +299,7 @@ const Button=styled.button`
 
     &:hover{
 
-        opacity: 0.9;
+        background-color: 
 
     }
 
@@ -306,7 +321,7 @@ const Cart = () => {
 
         <Top>
 
-            <TopButton>CONTINUE SHOPPING</TopButton>
+            <TopButton>Continue Shopping</TopButton>
 
             <TopTexts>
 
@@ -316,7 +331,7 @@ const Cart = () => {
 
             </TopTexts>
 
-            <TopButton type="filled">CHECKOUT NOW</TopButton>
+            <TopButton type="filled">Checkout</TopButton>
 
         </Top>
 
@@ -332,9 +347,9 @@ const Cart = () => {
 
                         <Details>
 
-                            <ProductName><b>Product : </b>Battery </ProductName>
+                            <ProductName><bo>Product : </bo>Battery </ProductName>
 
-                            <ProductId><b>ID:</b>123456</ProductId>
+                            <ProductId><bo>ID:</bo>123456</ProductId>
 
                             {/*<ProductColor color={"green"}/>
 
@@ -440,7 +455,7 @@ const Cart = () => {
 
                 </SummaryItem>
 
-                <Button>CHECKOUT NOW</Button>
+                <Button>Checkout</Button>
 
             </Summary>
 
