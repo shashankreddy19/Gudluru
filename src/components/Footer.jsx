@@ -7,6 +7,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container=styled.div`
 padding: 20px 0px 40px 120px;
@@ -21,7 +22,7 @@ const Left=styled.div`
     padding: 20px;
 `
 const Logo=styled.h1`
-    font-family:'Dancing Script', cursive;
+    font-family: 'Signika Negative', sans-serif;
     color:#e78045;
 `
 const Description=styled.p`
@@ -50,10 +51,13 @@ const Center=styled.div`
     padding:20px;
     cursor: pointer;
     
+    
 `
 const Title=styled.h3`
 font-family: 'Comfortaa';
     margin-bottom: 30px;
+    text-decoration:underline;
+    margin-left:25px;
 `
 const List=styled.ul`
     margin: 0;
@@ -61,6 +65,10 @@ const List=styled.ul`
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+
+    flex-direction:row;
+    align-items:start;
+    justify-content: space-around;
 `
 const ListItem=styled.li`
 font-family: 'Comfortaa', cursive;
@@ -109,14 +117,39 @@ const Footer = () => {
             </SocialContainer>
         </Left>
         <Center>
+            <>
             <Title>Useful Links</Title>
+            </>
+            
             <List>
-                <ListItem>Home</ListItem>
-                <ListItem>My Account</ListItem>
-                <ListItem>Cart</ListItem>
-                <ListItem>Wishlist</ListItem>
-                <ListItem>Order Tracking</ListItem>
-                <ListItem>Terms</ListItem>
+                <div>
+                <Link to="/" style={{textDecoration:"None"}}>
+                    <ListItem>Home</ListItem>
+                </Link>
+                <Link to="#" style={{textDecoration:"None"}}>
+                    <ListItem>My Account</ListItem>
+                </Link>
+                </div>
+                <div >
+                <Link to="/cart" style={{textDecoration:"None"}}>
+                    <ListItem style={{marginBottom:"28px"}}>Cart</ListItem>
+                </Link>
+                
+                
+                <Link to="#" style={{textDecoration:"None"}}>
+                    <ListItem>Wishlist</ListItem>
+                </Link>
+                </div>
+                <div>
+                <Link to="#" style={{textDecoration:"None"}}>
+                    <ListItem>Order Tracking</ListItem>
+                </Link>
+                <Link to="#" style={{textDecoration:"None"}}>
+                    <ListItem>Terms</ListItem>
+                </Link>
+                </div>
+                
+                
             </List>
         </Center>
         <Right>

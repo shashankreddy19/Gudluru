@@ -2,8 +2,9 @@ import styled from "styled-components"
 import { mobile } from "../responsive"
 
 const Container=styled.div`
-position: relative;
-    margin-right: 30px;
+    position: relative;
+    padding-bottom:5px;
+    margin-right: 20px;
     flex:1;
     width: fit-content;
     height:48.5vh;
@@ -23,7 +24,7 @@ const Image=styled.img`
     width: 100%;
     height: 40vh;
     object-fit: cover;
-    ${mobile({height:"30vh"})};
+    ${mobile({width:"80vw"})};
     //opacity: 0.8;
 `
 const Info=styled.div`
@@ -32,6 +33,7 @@ const Info=styled.div`
     width: 100%;
     display: flex;
     align-items: center;
+    
     justify-content: space-between;
 
 `
@@ -39,8 +41,7 @@ const Title=styled.h1`
     font-family: 'Comfortaa', cursive;
     font-size: 20px;
     color: #353433;
-    margin:20px; 
-   
+    margin:20px;
 `
 const Button=styled.button`
     margin-right: 10px;

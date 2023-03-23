@@ -11,12 +11,16 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import About from "./pages/About";
 
 const App=()=>{
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<Home/>}/>
+            </Routes>
+            <Routes>
+                <Route path="/about" element={<About/>}/>
             </Routes>
             <Routes>
                 <Route path="/products" element={<ProductList/>}/>
