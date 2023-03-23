@@ -12,18 +12,14 @@ import styled from 'styled-components'
     background-color: white;
     position: absolute;
 `*/
-const Maincontainer=styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-`
+
 
 const Container=styled.div`
-  padding: 0;
-   flex:1;
-   margin: 5px 0px 25px 5px;
+  
+   padding: 0;
+   margin: 5px 0px 25px 15px;
    border-radius: 20px;
+   flex:1;
    width: fit-content;
    height: 38vh;
    justify-content: center;
@@ -36,13 +32,11 @@ const Container=styled.div`
       transform: scale(1.05);
       transition: 0.15s ease-in ;
     }
-
 `
-
 const Image=styled.img`
     height: 75%;
-    width:inherit;
-
+    width:100%;
+   object-fit:cover;
     
 `
 const Info=styled.div`
@@ -83,7 +77,7 @@ const Product = ({item}) => {
     window.scrollTo(0, 0)
 });
   return (
-     <Maincontainer>
+    //  <Maincontainer>
       <Container>
         {/*<Circle/>*/}
         <Image src={item.img}/>
@@ -103,7 +97,7 @@ const Product = ({item}) => {
           </Iconlist>
         </Info>
       </Container>
-      </Maincontainer>
+      // </Maincontainer>
   )
 }
 
