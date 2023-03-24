@@ -6,6 +6,7 @@ import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { mobile } from '../responsive'
+import formatCurrancy from '../formatCurrency'
 
 const Container=styled.div``
 
@@ -215,7 +216,7 @@ const Cart = () => {
                             <ProductAmount>1</ProductAmount>
                             <Remove/>
                         </ProductAmountContainer>
-                        <ProductPrice>$ 30</ProductPrice>
+                        <ProductPrice>{formatCurrancy(300)}</ProductPrice>
                     </PriceDetails>
                 </Product>
 
@@ -240,7 +241,7 @@ const Cart = () => {
                             <Remove/>
                         </ProductAmountContainer>
 
-                        <ProductPrice>$ 10</ProductPrice>
+                        <ProductPrice>{formatCurrancy(100)}</ProductPrice>
                     </PriceDetails>
 
                 </Product>
@@ -251,22 +252,22 @@ const Cart = () => {
 
                 <SummaryItem>
                     <SummaryItemText>Subtotal</SummaryItemText>
-                    <SummaryItemPrice>$ 40</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrancy(400)}</SummaryItemPrice>
                 </SummaryItem>
 
                 <SummaryItem>
                     <SummaryItemText>Estimated Shipping</SummaryItemText>
-                    <SummaryItemPrice>$ 5.69</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrancy(50.69)}</SummaryItemPrice>
                 </SummaryItem>
 
                 <SummaryItem>
                     <SummaryItemText>Shipping Shipping</SummaryItemText>
-                    <SummaryItemPrice>$ -5.69</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrancy(-50.69)}</SummaryItemPrice>
                 </SummaryItem>
 
                 <SummaryItem type="total">
                     <SummaryItemText >Total</SummaryItemText>
-                    <SummaryItemPrice>$ 40</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrancy(400)}</SummaryItemPrice>
                 </SummaryItem>
 
                 <Button>Checkout</Button>
