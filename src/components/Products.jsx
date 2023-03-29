@@ -3,9 +3,11 @@ import styled from 'styled-components'
 import {popularProducts} from '../data'
 import Product from './Product'
 import {Link} from 'react-router-dom'
+import { mobile } from '../responsive'
 
 const Maincontainer=styled.div`
-  padding: 20px 150px;
+  padding: 3% 2% 3% 3%;
+  ${mobile({padding:"80px 0 0 10px"})};
 `
 const H1=styled.h1`
   font-size: 40px;
@@ -16,12 +18,15 @@ const H1=styled.h1`
   }
 `
 const Container=styled.div`
-    padding:20px;
+   // padding:10px;
     display: flex;
+    width: 100%;
+    //height:100vh;
     flex-wrap: wrap;
     justify-content: space-between;
+    
+  
 `
-
 const Products = () => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0)

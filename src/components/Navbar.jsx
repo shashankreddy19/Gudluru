@@ -1,5 +1,7 @@
+import { Badge } from '@mui/material'
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import gudluru from '../Images/gudluruLogo.jpg'
 const Container=styled.div`
     position: sticky;
@@ -238,7 +240,7 @@ class Navbar extends Component {
                         <Menuitem href="/">
                                 Home
                         </Menuitem>
-                        <Menuitem href="#">
+                        <Menuitem href="/about">
                             About
                         </Menuitem >
                         <Menuitem href="#">
@@ -251,7 +253,11 @@ class Navbar extends Component {
                             Login
                         </Signin>
                         <Menuitem href="/cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <Badge badgeContent={4} color="primary" >
+                            <ShoppingCartOutlinedIcon/>
+                                {/* <i class="fa-solid fa-cart-shopping"></i> */}
+                            </Badge>
+                            
                         </Menuitem >
                     </Right>
                     <Icon onClick={this.handleClick} >
