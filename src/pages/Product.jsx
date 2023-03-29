@@ -6,6 +6,7 @@ import Newsletter from "../components/Newsletter"
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import { mobile } from "../responsive"
+import formatCurrancy from "../formatCurrency"
 
 const Container =styled.div``
 const Wrapper=styled.div`
@@ -123,8 +124,8 @@ const Product = () => {
             Model : BL-5C<br/>
             Product Dimensions : 10.9 x 9.7 x 0.4 cm; 20 Grams
           </Description>
-          <Price>$ 20</Price>
-          <FilterContainer>
+          <Price>{formatCurrancy(20)}</Price>
+          {/* <FilterContainer>
             <Filter>
               <FilterTitle>Color </FilterTitle>
               <FilterColor color="black"/>
@@ -142,7 +143,7 @@ const Product = () => {
                 <FilterSizeOption>XXL</FilterSizeOption>
               </FilterSize>
             </Filter>
-          </FilterContainer>
+          </FilterContainer> */}
           <AddContainer>
             <AmountContainer>
               <RemoveIcon/>
