@@ -101,6 +101,7 @@ const Button=styled.button`
 `
 
 const Product = () => {
+  const [count,setCount]=useState(0);
   return (
     <Container>
       <Navbar/>
@@ -149,7 +150,7 @@ const Product = () => {
               <Amount>1</Amount>
               <AddIcon/>
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            {count === 0 && <Button >ADD TO CART</Button>}
           </AddContainer>
         </InfoContainer>
       </Wrapper>
