@@ -61,9 +61,11 @@ const TopButton=styled.button`
 
     color:${props => props.type === "filled" && "white"};
     &:hover{
+        color: azure;
         transform: scale(1.05);
         transition: 80ms ease-in;
         background-color:#d87034;
+        border-color: white;        
     }
 `
 
@@ -75,13 +77,13 @@ const TopTexts=styled.div`
 
 const TopText=styled.span`
 
-    text-decoration: underline;
-
     margin:0 10px;
-
+    padding-bottom: 8px;
     cursor: pointer;
-
-   
+   &:hover{
+        border-bottom: 1px solid #d87034;
+        color:#d87034 ;
+   }
 
 `
 
@@ -278,7 +280,7 @@ const Button=styled.button`
     color: white;
     border: none;
     font-weight: 600;
-
+    border-radius: 6px;
     cursor: pointer;
 
     &:hover{

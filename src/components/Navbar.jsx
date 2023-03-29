@@ -5,6 +5,8 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import gudluru from '../Images/gudluruLogo.jpg'
 const Container=styled.div`
     position: sticky;
+    top: 0;
+    z-index: 100;
     padding: 12px 150px;
     background-color: #fae9dd;
     font-family: 'Ubuntu', sans-serif;
@@ -222,10 +224,10 @@ class Navbar extends Component {
                 <Wrapper>
                     <Left>
                     <LButton href="#">
-                            B 2 C
+                            B 2 B
                         </LButton>
                         <RButton href="#">
-                            B 2 B
+                            B 2 C
                         </RButton>
                     </Left>
                     <Center>
