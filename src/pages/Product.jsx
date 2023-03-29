@@ -8,6 +8,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { mobile } from "../responsive"
 import formatCurrency from'../formatCurrency'
 import { useState } from "react"
+import { Navigate, useNavigate } from "react-router-dom"
 
 const Container =styled.div``
 const Wrapper=styled.div`
@@ -19,25 +20,27 @@ const ImageContainer=styled.div`
   flex:1;
 `
 const Image=styled.img`
-  width: 100%;
+  width: 80%;
   height: 65vh;
-  object-fit:cover;
+  object-fit:contain;
 `
 const InfoContainer=styled.div`
   flex:1;
-  padding:0px 50px;
+  padding:50px 50px 0px;
   ${mobile({padding:"10px"})}
 `
 const Title=styled.h1`
-  font-weight: 600;
+font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
 `
 const Description=styled.p`
-  font-family: 'Comfortaa', cursive;
+  
+  font-family: 'Dosis', sans-serif;
   margin:20px 0px;
 `
 const Price=styled.span`
   font-weight: 100;
-  font-size: 40px;
+  font-size: 25px;
 `
 const FilterContainer=styled.div`
   width: 50%;
@@ -70,7 +73,7 @@ const FilterSizeOption=styled.option`
 
 `
 const AddContainer=styled.div`
-  margin-top:10%;
+  margin-top:8%;
 `
 const AmountContainer=styled.div`
   display: flex;
@@ -87,30 +90,37 @@ const Amount=styled.span`
   justify-content: center;
   margin:0 5px;
 `
+const mainButton=styled.div`
+  
+`
 const Button=styled.button`
-  padding: 15px;
-  border:2px solid teal;
+  font-family: 'Comfortaa', cursive;
+  padding: 13px;
+  border:2px solid #d87034;
   background-color: white;
   cursor: pointer;
   font-weight: 500;
-
+  border-radius: 8px;
+  margin-right: 25px;
   &:hover{
     background-color:#d87034;
     color:white;
+    box-shadow: 1px 2px 2px #b59887;
+    transition: 100ms ease-in-out;
   }
 `
 
 const Product = () => {
-  const [count,setCount]=useState(0);
+  const [addItem,setCount]=useState(false);
   const handle=()=>{
-    setCount(1);
+    setCount(!addItem);
   }
-  const handleRemove=()=>{
-    setCount(count-1);
+  const nav=useNavigate();
+  const navigateToCart=()=>
+  {
+    nav("/cart");
   }
-  const handleAdd=()=>{
-    setCount(count+1);
-  }
+
   return (
     <Container>
       <Navbar/>
@@ -133,7 +143,7 @@ const Product = () => {
             Model : BL-5C<br/>
             Product Dimensions : 10.9 x 9.7 x 0.4 cm; 20 Grams
           </Description>
-          <Price>{formatCurrency(99)}</Price>
+          <Price>{formatCurrency(100)}</Price>
           {/* <FilterContainer>
             <Filter>
               <FilterTitle>Color </FilterTitle>
@@ -154,13 +164,10 @@ const Product = () => {
             </Filter>
           </FilterContainer> */}
           <AddContainer>
-            {count === 0 && <Button onClick={handle}>ADD TO CART</Button>}
-            {count !==0 && 
-                <AmountContainer>
-                  <RemoveIcon onClick={handleRemove} style={{cursor:"pointer"}}/>
-                  <Amount>{count}</Amount>
-                  <AddIcon onClick={handleAdd} style={{cursor:"pointer"}}/>
-                </AmountContainer>
+            {!addItem && <Button onClick={handle}>Add to cart</Button>}
+            {addItem  && <mainButton><Button onClick={navigateToCart}>Go to cart</Button>
+                <Button onClick={handle}>Remove from cart</Button>
+                </mainButton>
             }
           </AddContainer>
         </InfoContainer>

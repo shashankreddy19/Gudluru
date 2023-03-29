@@ -2,7 +2,7 @@ import Add from '@mui/icons-material/Add'
 
 import Remove from '@mui/icons-material/Remove'
 
-import React from 'react'
+import React, { useReducer } from 'react'
 
 import styled from 'styled-components'
 
@@ -14,6 +14,7 @@ import Navbar from '../components/Navbar'
 
 import { mobile } from '../responsive'
 import formatCurrency from'../formatCurrency'
+import { fontSize } from '@mui/system'
 
  
 
@@ -28,10 +29,10 @@ const Wrapper=styled.div`
 `
 
 const Title=styled.h1`
-    font-weight:450;
     font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
     text-align: center;
-
+    font-size: 32px;
 `
 
 const Top=styled.div`
@@ -48,7 +49,7 @@ const Top=styled.div`
 const TopButton=styled.button`
 
     padding:10px;
-
+    font-family: 'Comfortaa', cursive;
     font-weight: 600;
     border-radius: 6px;
     cursor: pointer;
@@ -76,7 +77,7 @@ const TopTexts=styled.div`
 `
 
 const TopText=styled.span`
-
+    font-family: 'Kanit', sans-serif;
     margin:0 10px;
     padding-bottom: 8px;
     cursor: pointer;
@@ -129,7 +130,7 @@ const Image=styled.img`
 
     height: 200px;
 
-    margin:30px;
+    margin:20px;
 
 `
 
@@ -144,19 +145,23 @@ const Details=styled.div`
     justify-content:space-evenly;
 `
 const Bo=styled.p`
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
 `
 
-const ProductName=styled.span`
-
-font-size:20px;
-
+const ProductName=styled.p`
+    font-family: 'Comfortaa', cursive;
+    line-height: 30px;
+    font-size:15px;
+    width: max-content;
 `
 
 const ProductId=styled.span`
-    font-family: 'Dosis', sans-serif;
-    font-size:20px;
-    font-weight: 2px;
+font-family: 'Comfortaa', cursive;
+line-height: 30px;
+    /* font-family: 'Dosis', sans-serif; */
+    font-size:15px;
+    width: max-content;
 `
 
 const ProductColor=styled.div`
@@ -197,11 +202,11 @@ const ProductAmountContainer=styled.div`
 
     margin-bottom:20px;
 
+    font-size: 18px;
+
 `
 
 const ProductAmount=styled.div`
-
-    font-size: 24px;
 
     margin: 5px;
 
@@ -211,7 +216,7 @@ const ProductAmount=styled.div`
 
 const ProductPrice=styled.div`
 
-    font-size: 30px;
+    font-size: 20px;
 
     font-weight: 200;
 
@@ -247,8 +252,11 @@ const Summary=styled.div`
 `
 
 const SummaryTitle=styled.h1`
-        font-weight:450;
+   
     font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 32px;
 `
 
 const SummaryItem=styled.div`
@@ -265,7 +273,9 @@ const SummaryItem=styled.div`
 
 `
 
-const SummaryItemText=styled.span``
+const SummaryItemText=styled.span`
+font-family: 'Kanit', sans-serif;
+`
 
 const SummaryItemPrice=styled.span``
 
@@ -276,7 +286,7 @@ const Button=styled.button`
     padding: 10px;
 
     background-color: #d47945;
-
+    font-family: 'Comfortaa', cursive;
     color: white;
     border: none;
     font-weight: 600;
@@ -292,7 +302,30 @@ const Button=styled.button`
 `
 
 const Cart = () => {
-
+    const initial=1
+    const reducer =(state,action)=>
+    {
+        switch(action.type)
+        {
+            case 'incr':
+                return state+1
+            case 'decr':
+                return state-1
+            default:
+                return state
+        }
+    }
+    const[count1,dispatch1]= useReducer(reducer,initial)
+    const[count2,dispatch2]= useReducer(reducer,initial)
+    var shippingfee=25
+    var conveniencefee=10
+    var cost1=100*count1
+    var cost2=200*count2
+    if(count1+count2===0)
+    {
+        conveniencefee=0
+        shippingfee=0
+    }
   return (
 
     <Container>
@@ -303,11 +336,11 @@ const Cart = () => {
 
       <Wrapper>
 
-        <Title>YOUR BAG</Title>
+        <Title>Your Bag</Title>
 
         <Top>
 
-            <TopButton>CONTINUE SHOPPING</TopButton>
+            <TopButton>Continue Shopping</TopButton>
 
             <TopTexts>
 
@@ -317,7 +350,7 @@ const Cart = () => {
 
             </TopTexts>
 
-            <TopButton type="filled">CHECKOUT NOW</TopButton>
+            <TopButton type="filled">Checkout now</TopButton>
 
         </Top>
 
@@ -325,17 +358,17 @@ const Cart = () => {
 
             <Info>
 
-                <Product>
+                {  count1!==0 && <Product>
 
                     <ProductDetail>
 
-                        <Image src="https://th.bing.com/th/id/OIP.iIaBPwT7jaKkiuMO5DCpjQHaGl?w=200&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+                    <Image src="https://m.media-amazon.com/images/I/41C2LHSQoqS._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"/>
 
                         <Details>
 
-                            <ProductName><Bo>Product : </Bo>Battery </ProductName>
+                            <ProductName><Bo>Product : </Bo>Component 1 </ProductName>
 
-                            <ProductId><Bo>ID:</Bo>123456</ProductId>
+                            <ProductId><Bo>ID :</Bo>123456</ProductId>
 
                             {/*<ProductColor color={"green"}/>
 
@@ -350,33 +383,33 @@ const Cart = () => {
                         <ProductAmountContainer>
 
                             
-                            <Remove/>
+                            <Remove style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch1({type:'decr',id:'b'})}/>
 
-                            <ProductAmount>1</ProductAmount>
+                            <ProductAmount>{count1}</ProductAmount>
 
-                            <Add/>
+                            <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch1({type:'incr',id:'b'})}/>
 
                         </ProductAmountContainer>
 
-                        <ProductPrice>{formatCurrency(30)}</ProductPrice>
+                        <ProductPrice>{formatCurrency(cost1)}</ProductPrice>
 
                     </PriceDetails>
 
-                </Product>
+                </Product>}
 
                 <Hr/>
 
-                <Product>
+                { count2!==0 && <Product>
 
                     <ProductDetail>
 
-                        <Image src="https://th.bing.com/th?id=OIP.4icr7ZTWPl6YGFA53T91hQHaG5&w=258&h=241&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"/>
+                    <Image src="https://m.media-amazon.com/images/I/41C2LHSQoqS._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"/>
 
                         <Details>
 
-                            <ProductName><Bo>Product : </Bo>Battery Cell </ProductName>
+                            <ProductName><Bo>Product : </Bo>Component 2 </ProductName>
 
-                            <ProductId><Bo>ID:</Bo>923456</ProductId>
+                            <ProductId><Bo>ID :</Bo>923456</ProductId>
 
                             {/*<ProductColor color={"black"}/>
 
@@ -390,29 +423,31 @@ const Cart = () => {
 
                         <ProductAmountContainer>
 
-                            <Remove/>
-                            <ProductAmount>1</ProductAmount>
-                            <Add/>
+                        <Remove style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch2({type:'decr',id:'b'})}/>
+
+                        <ProductAmount>{count2}</ProductAmount>
+
+                        <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch2({type:'incr',id:'b'})}/>
 
                         </ProductAmountContainer>
-
-                        <ProductPrice>{formatCurrency(10)}</ProductPrice>
+                        
+                        <ProductPrice>{formatCurrency(cost2)}</ProductPrice>
 
                     </PriceDetails>
 
-                </Product>
+                </Product>}
 
             </Info>
 
             <Summary>
 
-                <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+                <SummaryTitle>Order Summary</SummaryTitle>
 
                 <SummaryItem>
 
                     <SummaryItemText>Subtotal</SummaryItemText>
 
-                    <SummaryItemPrice>{formatCurrency(40)}</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrency(cost1+cost2)}</SummaryItemPrice>
 
                 </SummaryItem>
 
@@ -420,15 +455,15 @@ const Cart = () => {
 
                     <SummaryItemText>Estimated Shipping</SummaryItemText>
 
-                    <SummaryItemPrice>{formatCurrency(5.69)}</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrency(shippingfee)}</SummaryItemPrice>
 
                 </SummaryItem>
 
                 <SummaryItem>
 
-                    <SummaryItemText>Shipping Shipping</SummaryItemText>
+                    <SummaryItemText>Convenience fee</SummaryItemText>
 
-                    <SummaryItemPrice>{formatCurrency(-5.69)}</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrency(conveniencefee)}</SummaryItemPrice>
 
                 </SummaryItem>
 
@@ -436,11 +471,11 @@ const Cart = () => {
 
                     <SummaryItemText >Total</SummaryItemText>
 
-                    <SummaryItemPrice>{formatCurrency(40)}</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrency(conveniencefee+cost1+cost2+shippingfee)}</SummaryItemPrice>
 
                 </SummaryItem>
 
-                <Button>CHECKOUT NOW</Button>
+                <Button>Checkout now</Button>
 
             </Summary>
 

@@ -255,10 +255,10 @@ class Navbar extends Component {
                             Login
                         </Signin>
                         <Menuitem href="/cart">
-                            <Badge badgeContent={4} color="primary" >
-                            <ShoppingCartOutlinedIcon/>
-                                {/* <i class="fa-solid fa-cart-shopping"></i> */}
-                            </Badge>
+                            {/* <Badge badgeContent={4} color="primary" >
+                            <ShoppingCartOutlinedIcon/> */}
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            {/* </Badge> */}
                             
                         </Menuitem >
                     </Right>
