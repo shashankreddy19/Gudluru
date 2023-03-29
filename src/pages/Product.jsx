@@ -30,6 +30,7 @@ const Title=styled.h1`
   font-weight: 600;
 `
 const Description=styled.p`
+  font-family: 'Comfortaa', cursive;
   margin:20px 0px;
 `
 const Price=styled.span`
@@ -106,11 +107,11 @@ const Product = () => {
       <Navbar/>
       <Wrapper>
         <ImageContainer>
-          <Image src="https://th.bing.com/th/id/OIP.KZrusAcH-CaoVOCVVMDE9wAAAA?w=198&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
+          <Image src="https://m.media-amazon.com/images/I/41C2LHSQoqS._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"/>
         </ImageContainer>
         <InfoContainer>
           <Title>
-            Nokia Battery
+            Component 1
           </Title>
           <Description>
             This is description about product..!!

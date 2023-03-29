@@ -18,289 +18,194 @@ import { mobile } from '../responsive'
 
 const Container=styled.div`
     
+    
 `
 
 const Wrapper=styled.div`
-
-    padding:20px;
-
+    padding:50px 100px 100px;
     ${mobile({padding:"10px"})};
-
 `
 
 const Title=styled.h1`
-
-    font-weight:600;
-
+    font-weight:450;
+    font-family: 'Ubuntu', sans-serif;
     text-align: center;
-
 `
 
 const Top=styled.div`
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     padding: 20px;
-
-
-`
-const bo=styled.p`
-    font-family: 'Ubuntu', sans-serif;
 `
 
 const TopButton=styled.button`
-
-font-family: 'Comfortaa', cursive;
+    font-family: 'Comfortaa', cursive;
     padding:10px;
-
     font-weight: 600;
-
+    border-radius: 6px;
     cursor: pointer;
-
     border:${props => props.type === "filled" && "none"};
-
     border-color:${props => props.type !== "filled" && "#d47945"};
-
     background-color:${props => props.type === "filled" ? "#d47945" : "transparent"};
-
     color:${props => props.type === "filled" && "white"};
-
+    &:hover{
+        transform: scale(1.05);
+        transition: 80ms ease-in;
+        background-color:#d87034;
+    }
 `
 
 const TopTexts=styled.div`
-    
-
     ${mobile({display:"none"})};
-
 `
 
 const TopText=styled.span`
-
     font-family: 'Ubuntu', sans-serif;
-
     text-decoration: none;
     padding-bottom: 8px;
     margin:0 10px;
-
     cursor: pointer;
-
     &:hover
     {
         border-bottom: 1px solid #d47945;
     }
-
 `
 
- 
-
 const Bottom=styled.div`
-
     display: flex;
-
     justify-content:space-between;
-
     ${mobile({flexDirection:"column"})};
-
 `
 
 const Info=styled.div`
-
     flex:3;
-
 `
 
 const Product=styled.div`
-
     display: flex;
-
     justify-content: space-between;
-
     ${mobile({flexDirection:"column"})};
-
     box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
-
 `
 
 const ProductDetail=styled.div`
-
     flex: 1;
-
     display: flex;
-
 `
 
 const Image=styled.img`
-
     height: 200px;
-
     margin:30px;
-
 `
 
 const Details=styled.div`
-
     padding: 20px;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content:space-evenly;
-
+`
+const Bo=styled.p`
+    font-family: 'Comfortaa', cursive;
 `
 
 const ProductName=styled.span`
-
+font-family: 'Raleway', sans-serif;
 font-size:20px;
 
 `
 
 const ProductId=styled.span`
-
-font-size:20px;
-
+    font-family: 'Dosis', sans-serif;
+    font-size:20px;
+    font-weight: 2px;
 `
 
 const ProductColor=styled.div`
-
     width: 20px;
-
     height: 20px;
-
     border-radius: 50%;
-
     background-color: ${props=> props.color};
-
 `
 
 const ProductSize=styled.span``
 
 const PriceDetails=styled.div`
-
     flex:1;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     flex-direction: column;
-
     ${mobile({flexDirection:"row",justifyContent:"space-around"})};
-
 `
 
 const ProductAmountContainer=styled.div`
-
     display: flex;
-
     align-items: center;
-
     margin-bottom:20px;
-
 `
 
 const ProductAmount=styled.div`
-
     font-size: 24px;
-
     margin: 5px;
-
     ${mobile({margin:"5px 15px"})};
-
 `
 
 const ProductPrice=styled.div`
-
     font-size: 30px;
-
     font-weight: 200;
-
     ${mobile({marginBottom:"20px"})};
-
 `
 
 const Hr=styled.hr`
-
     background-color: #eee;
-
     border: none;
-
     height: 1px;
-
- 
-
 `
 
- 
-
 const Summary=styled.div`
-
     flex: 1;
-
     border:0.5px solid lightgrey;
-
     border-radius: 10px;
-
     padding: 20px;
-
-    height: 50vh;
-
+    height: 45vh;
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
-
     margin-left: 10px;
-
 `
 
 const SummaryTitle=styled.h1`
-
-    font-weight:300;
-
+        font-weight:450;
+    font-family: 'Ubuntu', sans-serif;
 `
 
 const SummaryItem=styled.div`
-
     margin: 30px 0;
-
     display: flex;
-
     justify-content: space-between;
-
     font-weight: ${props => props.type=== "total" && "500"};
-
     font-size: ${props => props.type === "total" && "24px"};
-
 `
 
-const SummaryItemText=styled.span``
+const SummaryItemText=styled.span`
+font-family: 'Comfortaa', cursive;
+`
 
 const SummaryItemPrice=styled.span``
 
 const Button=styled.button`
-
     width: 100%;
-
     padding: 10px;
-
     background-color: #d47945;
-
     font-family: 'Comfortaa', cursive;
-
     color: white;
-
+    border: none;
     font-weight: 600;
-
+    border-radius: 6px;
     cursor: pointer;
-
     &:hover{
-
-        background-color: 
-
+        transform: scale(1.05);
+        transition: 80ms ease-in;
+        background-color:#d87034;
     }
 
 `
@@ -347,9 +252,9 @@ const Cart = () => {
 
                         <Details>
 
-                            <ProductName><bo>Product : </bo>Battery </ProductName>
+                            <ProductName><Bo>Product : </Bo>Battery </ProductName>
 
-                            <ProductId><bo>ID:</bo>123456</ProductId>
+                            <ProductId><Bo>ID:</Bo>123456</ProductId>
 
                             {/*<ProductColor color={"green"}/>
 
@@ -363,11 +268,12 @@ const Cart = () => {
 
                         <ProductAmountContainer>
 
-                            <Add/>
+                            
+                            <Remove/>
 
                             <ProductAmount>1</ProductAmount>
 
-                            <Remove/>
+                            <Add/>
 
                         </ProductAmountContainer>
 
@@ -387,9 +293,9 @@ const Cart = () => {
 
                         <Details>
 
-                            <ProductName><b>Product : </b>Battery Cell </ProductName>
+                            <ProductName><Bo>Product : </Bo>Battery Cell </ProductName>
 
-                            <ProductId><b>ID:</b>923456</ProductId>
+                            <ProductId><Bo>ID:</Bo>923456</ProductId>
 
                             {/*<ProductColor color={"black"}/>
 
@@ -403,11 +309,11 @@ const Cart = () => {
 
                         <ProductAmountContainer>
 
-                            <Add/>
+                            <Remove/>
 
                             <ProductAmount>2</ProductAmount>
 
-                            <Remove/>
+                            <Add/>
 
                         </ProductAmountContainer>
 
