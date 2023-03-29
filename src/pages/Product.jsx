@@ -6,6 +6,8 @@ import Newsletter from "../components/Newsletter"
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import { mobile } from "../responsive"
+import formatCurrency from'../formatCurrency'
+import { useState } from "react"
 
 const Container =styled.div``
 const Wrapper=styled.div`
@@ -68,11 +70,7 @@ const FilterSizeOption=styled.option`
 
 `
 const AddContainer=styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width:50%;
-  ${mobile({width:"100%"})};
+  margin-top:10%;
 `
 const AmountContainer=styled.div`
   display: flex;
@@ -97,11 +95,22 @@ const Button=styled.button`
   font-weight: 500;
 
   &:hover{
-    background-color: #f8f4f4;
+    background-color:#d87034;
+    color:white;
   }
 `
 
 const Product = () => {
+  const [count,setCount]=useState(0);
+  const handle=()=>{
+    setCount(1);
+  }
+  const handleRemove=()=>{
+    setCount(count-1);
+  }
+  const handleAdd=()=>{
+    setCount(count+1);
+  }
   return (
     <Container>
       <Navbar/>
@@ -124,8 +133,8 @@ const Product = () => {
             Model : BL-5C<br/>
             Product Dimensions : 10.9 x 9.7 x 0.4 cm; 20 Grams
           </Description>
-          <Price>$ 20</Price>
-          <FilterContainer>
+          <Price>{formatCurrency(99)}</Price>
+          {/* <FilterContainer>
             <Filter>
               <FilterTitle>Color </FilterTitle>
               <FilterColor color="black"/>
@@ -143,14 +152,16 @@ const Product = () => {
                 <FilterSizeOption>XXL</FilterSizeOption>
               </FilterSize>
             </Filter>
-          </FilterContainer>
+          </FilterContainer> */}
           <AddContainer>
-            <AmountContainer>
-              <RemoveIcon/>
-              <Amount>1</Amount>
-              <AddIcon/>
-            </AmountContainer>
-            <Button>ADD TO CART</Button>
+            {count === 0 && <Button onClick={handle}>ADD TO CART</Button>}
+            {count !==0 && 
+                <AmountContainer>
+                  <RemoveIcon onClick={handleRemove} style={{cursor:"pointer"}}/>
+                  <Amount>{count}</Amount>
+                  <AddIcon onClick={handleAdd} style={{cursor:"pointer"}}/>
+                </AmountContainer>
+            }
           </AddContainer>
         </InfoContainer>
       </Wrapper>
