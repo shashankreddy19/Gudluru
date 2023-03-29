@@ -13,7 +13,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 import { mobile } from '../responsive'
-import formatCurrency from'../formatCurrancy'
+import formatCurrency from'../formatCurrency'
 
  
 
@@ -356,7 +356,7 @@ const Cart = () => {
 
                         </ProductAmountContainer>
 
-                        <ProductPrice>$ 30</ProductPrice>
+                        <ProductPrice>{formatCurrency(30)}</ProductPrice>
 
                     </PriceDetails>
 
@@ -394,7 +394,7 @@ const Cart = () => {
 
                         </ProductAmountContainer>
 
-                        <ProductPrice>$ 10</ProductPrice>
+                        <ProductPrice>{formatCurrency(10)}</ProductPrice>
 
                     </PriceDetails>
 
@@ -410,7 +410,7 @@ const Cart = () => {
 
                     <SummaryItemText>Subtotal</SummaryItemText>
 
-                    <SummaryItemPrice>$ 40</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrency(40)}</SummaryItemPrice>
 
                 </SummaryItem>
 
@@ -418,7 +418,7 @@ const Cart = () => {
 
                     <SummaryItemText>Estimated Shipping</SummaryItemText>
 
-                    <SummaryItemPrice>$ 5.69</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrency(5.69)}</SummaryItemPrice>
 
                 </SummaryItem>
 
@@ -426,7 +426,7 @@ const Cart = () => {
 
                     <SummaryItemText>Shipping Shipping</SummaryItemText>
 
-                    <SummaryItemPrice>$ -5.69</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrency(-5.69)}</SummaryItemPrice>
 
                 </SummaryItem>
 
@@ -434,7 +434,7 @@ const Cart = () => {
 
                     <SummaryItemText >Total</SummaryItemText>
 
-                    <SummaryItemPrice>$ 40</SummaryItemPrice>
+                    <SummaryItemPrice>{formatCurrency(40)}</SummaryItemPrice>
 
                 </SummaryItem>
 
