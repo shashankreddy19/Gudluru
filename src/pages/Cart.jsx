@@ -8,7 +8,6 @@ import Navbar from '../components/Navbar'
 import { mobile } from '../responsive'
 import formatCurrency from'../formatCurrancy'
 
-<<<<<<< HEAD
  
 
 const Container=styled.div`
@@ -18,22 +17,12 @@ const Container=styled.div`
 
 const Wrapper=styled.div`
     padding:50px 100px 100px;
-=======
-const Container=styled.div``
-
-const Wrapper=styled.div`
-    padding:20px;
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
     ${mobile({padding:"10px"})};
 `
 
 const Title=styled.h1`
-<<<<<<< HEAD
     font-weight:450;
     font-family: 'Ubuntu', sans-serif;
-=======
-    font-weight:600;
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
     text-align: center;
 `
 
@@ -42,35 +31,23 @@ const Top=styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-<<<<<<< HEAD
-=======
-`
-const bo=styled.p`
-    font-family: 'Ubuntu', sans-serif;
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
 `
 
 const TopButton=styled.button`
     font-family: 'Comfortaa', cursive;
     padding:10px;
     font-weight: 600;
-<<<<<<< HEAD
     border-radius: 6px;
-=======
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
     cursor: pointer;
     border:${props => props.type === "filled" && "none"};
     border-color:${props => props.type !== "filled" && "#d47945"};
     background-color:${props => props.type === "filled" ? "#d47945" : "transparent"};
     color:${props => props.type === "filled" && "white"};
-<<<<<<< HEAD
     &:hover{
         transform: scale(1.05);
         transition: 80ms ease-in;
         background-color:#d87034;
     }
-=======
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
 `
 
 const TopTexts=styled.div`
@@ -121,7 +98,6 @@ const Details=styled.div`
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
-<<<<<<< HEAD
 `
 const Bo=styled.p`
     font-family: 'Comfortaa', cursive;
@@ -137,16 +113,6 @@ const ProductId=styled.span`
     font-family: 'Dosis', sans-serif;
     font-size:20px;
     font-weight: 2px;
-=======
-`
-
-const ProductName=styled.span`
-    font-size:20px;
-`
-
-const ProductId=styled.span`
-    font-size:20px;
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
 `
 
 const ProductColor=styled.div`
@@ -190,31 +156,19 @@ const Hr=styled.hr`
     border: none;
     height: 1px;
 `
-<<<<<<< HEAD
-
-=======
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
 const Summary=styled.div`
     flex: 1;
     border:0.5px solid lightgrey;
     border-radius: 10px;
     padding: 20px;
-<<<<<<< HEAD
     height: 45vh;
-=======
-    height: 50vh;
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
     margin-left: 10px;
 `
 
 const SummaryTitle=styled.h1`
-<<<<<<< HEAD
         font-weight:450;
     font-family: 'Ubuntu', sans-serif;
-=======
-    font-weight:300;
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
 `
 
 const SummaryItem=styled.div`
@@ -237,7 +191,6 @@ const Button=styled.button`
     background-color: #d47945;
     font-family: 'Comfortaa', cursive;
     color: white;
-<<<<<<< HEAD
     border: none;
     font-weight: 600;
     border-radius: 6px;
@@ -246,12 +199,6 @@ const Button=styled.button`
         transform: scale(1.05);
         transition: 80ms ease-in;
         background-color:#d87034;
-=======
-    font-weight: 600;
-    cursor: pointer;
-    &:hover{
-        background-color: #f19035; 
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
     }
 `
 
@@ -279,16 +226,11 @@ const Cart = () => {
                     <ProductDetail>
                         <Image src="https://th.bing.com/th/id/OIP.iIaBPwT7jaKkiuMO5DCpjQHaGl?w=200&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
                         <Details>
-<<<<<<< HEAD
 
                             <ProductName><Bo>Product : </Bo>Battery </ProductName>
 
                             <ProductId><Bo>ID:</Bo>123456</ProductId>
 
-=======
-                            <ProductName><bo>Product : </bo>Battery </ProductName>
-                            <ProductId><bo>ID:</bo>123456</ProductId>
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
                             {/*<ProductColor color={"green"}/>
                             <ProductSize><b>Size:</b>37.5</ProductSize>*/}
                         </Details>
@@ -296,7 +238,6 @@ const Cart = () => {
 
                     <PriceDetails>
                         <ProductAmountContainer>
-<<<<<<< HEAD
 
                             
                             <Remove/>
@@ -305,11 +246,6 @@ const Cart = () => {
 
                             <Add/>
 
-=======
-                            <Add/>
-                            <ProductAmount>1</ProductAmount>
-                            <Remove/>
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
                         </ProductAmountContainer>
                         <ProductPrice>{formatCurrency(300)}</ProductPrice>
                     </PriceDetails>
@@ -322,15 +258,10 @@ const Cart = () => {
                         <Image src="https://th.bing.com/th?id=OIP.4icr7ZTWPl6YGFA53T91hQHaG5&w=258&h=241&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"/>
                         <Details>
 
-<<<<<<< HEAD
                             <ProductName><Bo>Product : </Bo>Battery Cell </ProductName>
 
                             <ProductId><Bo>ID:</Bo>923456</ProductId>
 
-=======
-                            <ProductName><b>Product : </b>Battery Cell </ProductName>
-                            <ProductId><b>ID:</b>923456</ProductId>
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
                             {/*<ProductColor color={"black"}/>
                             <ProductSize><b>Size:</b>37.5</ProductSize>*/}
                         </Details>
@@ -338,7 +269,6 @@ const Cart = () => {
 
                     <PriceDetails>
                         <ProductAmountContainer>
-<<<<<<< HEAD
 
                             <Remove/>
 
@@ -346,11 +276,6 @@ const Cart = () => {
 
                             <Add/>
 
-=======
-                            <Add/>
-                            <ProductAmount>2</ProductAmount>
-                            <Remove/>
->>>>>>> 99be643093ef0871b546e0489dc61611daad3514
                         </ProductAmountContainer>
 
                         <ProductPrice>{formatCurrency(100)}</ProductPrice>
