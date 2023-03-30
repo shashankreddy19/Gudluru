@@ -71,7 +71,7 @@ const Ep=styled.div`
     font-size: 14px;
     color: aliceblue;
 ` 
-const Ea=styled.div`
+const Ea=styled.a`
       text-decoration: none;
       cursor: pointer;
     color: #d66a4c;
@@ -119,7 +119,7 @@ const Login = () => {
                   </Link>
                 </div>
                 <div>
-                    <Ea href="forgetpassword.html">Forgot password?</Ea>
+        <Ea href="/Forgot">Forgot password?</Ea>
                 </div>
             </Extra>
         </Right>
