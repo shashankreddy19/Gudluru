@@ -46,6 +46,8 @@ const Button=styled.button`
     box-shadow: 0px 2px 3px #cf723c;
     &:hover{
         background-color:#e6720c;
+        box-shadow:2px 2px 2px #0d0d0d;
+        text-shadow:1px 1px 2px rgb(0, 0, 0);
     }
 
 

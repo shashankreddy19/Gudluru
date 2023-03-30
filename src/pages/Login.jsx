@@ -56,7 +56,7 @@ const Button=styled.button`
     }
 `
 const Extra=styled.div`
-      border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0;
     position: absolute;
     display: flex;
     padding: 10px 30px;
@@ -119,7 +119,7 @@ const Login = () => {
                   </Link>
                 </div>
                 <div>
-        <Ea href="/Forgot">Forgot password?</Ea>
+                  <Ea href="/Forgot">Forgot password?</Ea>
                 </div>
             </Extra>
         </Right>

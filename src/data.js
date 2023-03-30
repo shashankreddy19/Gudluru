@@ -55,34 +55,29 @@ export const categories=[
 export const popularProducts =[
     {
         id:1,
-        name:"Recharge Battery",
+        name:"Acid Level Indicators",
         //img:"https://tinyurl.com/y3tj3j22",
-        img:"https://th.bing.com/th/id/OIP.zoEbQWDbb2NLv72XeTa3VQHaFS?w=264&h=189&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        img:require("./Images/acidLevelIndicator.jpg")
     },
     {
         id:2,
-        name:"Duracell",
-        img:"https://th.bing.com/th/id/OIP.o33JxmySsvK8ob-jThT1swHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        name:"Copper Nuts",
+        img:require("./Images/copperNuts.jpg")
     },
     {
         id:3,
-        name:"50w battery",
-        img:"https://th.bing.com/th/id/OIP.GH1LpNgK0A-C-cl52LAz6QAAAA?w=188&h=141&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        name:"Cold Forged Bushes",
+        img:require("./Images/coldForgedBushes.jpg")
     },
     {
         id:4,
-        name:"Li-ion battery",
-        img:"https://th.bing.com/th/id/OIP.3RfRLxziR-r3KKS1TwaYUwHaEK?w=288&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        name:"Battery Rope handles",
+        img:require("./Images/batteryRopeHandle.jpg")
     },
     {
         id:5,
-        name:"Car battery",
-        img:"https://th.bing.com/th/id/OIP.2JsR_7FXi03EPDWdrJuV3wHaE8?w=260&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-    },
-    {
-        id:6,
-        name:"HCL battery",
-        img:"https://th.bing.com/th/id/OIP.l9xq5mAwMCKml2LWPtCY2wHaHa?w=195&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        name:"D Lead Soap",
+        img:require("./Images/dLeadSoap.jpg")
     }
     
 ]

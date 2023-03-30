@@ -256,9 +256,9 @@ class Navbar extends Component {
                         </Signin>
                         <Menuitem href="/cart">
                             {/* <Badge badgeContent={4} color="primary" >
-                            <ShoppingCartOutlinedIcon/> */}
+                            <ShoppingCartOutlinedIcon/> 
+                            </Badge> */}
                                 <i class="fa-solid fa-cart-shopping"></i>
-                            {/* </Badge> */}
                             
                         </Menuitem >
                     </Right>

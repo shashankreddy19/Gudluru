@@ -9,6 +9,7 @@ import { mobile } from "../responsive"
 import formatCurrency from'../formatCurrency'
 import { useState } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
+import acidLevel from '../Images/acidLevelIndicator.jpg'
 
 const Container =styled.div``
 const Wrapper=styled.div`
@@ -126,7 +127,7 @@ const Product = () => {
       <Navbar/>
       <Wrapper>
         <ImageContainer>
-          <Image src="https://m.media-amazon.com/images/I/41C2LHSQoqS._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"/>
+          <Image src={acidLevel}/>
         </ImageContainer>
         <InfoContainer>
           <Title>
