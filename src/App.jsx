@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
+import Forgot from "./pages/Forgot";
 import {
   BrowserRouter as Router,
   Routes,
@@ -37,7 +38,13 @@ const App=()=>{
             <Routes>
                 <Route path="/register" element={<Register/>}/>
             </Routes>
+            <Routes>
+                <Route path="/forgot" element={<Forgot/>}/>
+            </Routes>
+            
         </Router>
+      
+      
     );
 };
 export default App;
