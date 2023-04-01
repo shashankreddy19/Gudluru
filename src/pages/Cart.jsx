@@ -6,7 +6,7 @@ import React, { useReducer } from 'react'
 
 import styled from 'styled-components'
 
-import Announcement from '../components/Announcement'
+// import Announcement from '../components/Announcement'
 
 import Footer from '../components/Footer'
 
@@ -14,9 +14,10 @@ import Navbar from '../components/Navbar'
 
 import { mobile } from '../responsive'
 import formatCurrency from'../formatCurrency'
-import { fontSize } from '@mui/system'
+// import { fontSize } from '@mui/system'
+import emptycartImage from '../Images/emptycart.svg'
 
- 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Container=styled.div`
     
@@ -25,7 +26,7 @@ const Container=styled.div`
 const Wrapper=styled.div`
     padding:50px 100px 100px;
     ${mobile({padding:"10px"})};
-
+    position: relative;
 `
 
 const Title=styled.h1`
@@ -93,12 +94,11 @@ const TopText=styled.span`
 const Bottom=styled.div`
 
     display: flex;
-
     justify-content:space-between;
-
+    
     ${mobile({flexDirection:"column"})};
 
-`
+`;
 
 const Info=styled.div`
 
@@ -279,6 +279,13 @@ font-family: 'Kanit', sans-serif;
 
 const SummaryItemPrice=styled.span``
 
+const EmptyImage=styled.img`
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+`
+
 const Button=styled.button`
 
     width: 100%;
@@ -315,14 +322,16 @@ const Cart = () => {
                 return state
         }
     }
+    var emptyCart=false
     const[count1,dispatch1]= useReducer(reducer,initial)
     const[count2,dispatch2]= useReducer(reducer,initial)
     var shippingfee=25
     var conveniencefee=10
     var cost1=100*count1
     var cost2=200*count2
-    if(count1+count2===0)
+    if(count1===0 && count2===0)
     {
+        emptyCart=true
         conveniencefee=0
         shippingfee=0
     }
@@ -344,17 +353,17 @@ const Cart = () => {
 
             <TopTexts>
 
-                <TopText>Shopping Bag(2)</TopText>
+                <TopText>Shopping Bag({count1+count2})</TopText>
 
                 <TopText>Your Wishlist (0)</TopText>
 
             </TopTexts>
 
-            <TopButton type="filled">Checkout now</TopButton>
+            {!emptyCart &&< TopButton type="filled">Checkout now</TopButton>}
 
         </Top>
 
-        <Bottom>
+        { !emptyCart && <Bottom >
 
             <Info>
 
@@ -388,6 +397,8 @@ const Cart = () => {
                             <ProductAmount>{count1}</ProductAmount>
 
                             <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch1({type:'incr',id:'b'})}/>
+
+                            <FontAwesomeIcon icon="fa-duotone fa-trash" />
 
                         </ProductAmountContainer>
 
@@ -479,7 +490,10 @@ const Cart = () => {
 
             </Summary>
 
-        </Bottom>
+        </Bottom>}
+        {
+            emptyCart && <EmptyImage src={emptycartImage}></EmptyImage>
+        }
 
       </Wrapper>
 
