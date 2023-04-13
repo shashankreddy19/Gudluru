@@ -19,6 +19,9 @@ import emptycartImage from '../Images/emptycart.svg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
+
 const Container=styled.div`
     
 `
@@ -318,6 +321,8 @@ const Cart = () => {
                 return state+1
             case 'decr':
                 return state-1
+            case 'del':
+                return 0
             default:
                 return state
         }
@@ -329,11 +334,9 @@ const Cart = () => {
     var conveniencefee=10
     var cost1=100*count1
     var cost2=200*count2
-    if(count1===0 && count2===0)
+    if(count1==0 && count2==0)
     {
         emptyCart=true
-        conveniencefee=0
-        shippingfee=0
     }
   return (
 
@@ -392,13 +395,14 @@ const Cart = () => {
                         <ProductAmountContainer>
 
                             
-                            <Remove style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch1({type:'decr',id:'b'})}/>
+                            <Remove style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch1({type:'decr'})}/>
 
                             <ProductAmount>{count1}</ProductAmount>
 
-                            <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch1({type:'incr',id:'b'})}/>
+                            <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch1({type:'incr'})}/>
 
-                            <FontAwesomeIcon icon="fa-duotone fa-trash" />
+                            {/* <FontAwesomeIcon icon="fa-duotone fa-trash" /> */}
+                            <FontAwesomeIcon icon={faTrash} style={{fontSize:"18px",cursor:"pointer",color:"#d87034",marginLeft:"6px"}} onClick={()=>dispatch1({type:'del'})} />
 
                         </ProductAmountContainer>
 
@@ -434,11 +438,13 @@ const Cart = () => {
 
                         <ProductAmountContainer>
 
-                        <Remove style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch2({type:'decr',id:'b'})}/>
+                        <Remove style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch2({type:'decr'})}/>
 
                         <ProductAmount>{count2}</ProductAmount>
 
-                        <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch2({type:'incr',id:'b'})}/>
+                        <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch2({type:'incr'})}/>
+
+                        <FontAwesomeIcon icon={faTrash} style={{fontSize:"18px",cursor:"pointer",color:"#d87034",marginLeft:"6px"}} onClick={()=>dispatch2({type:'del'})}/>
 
                         </ProductAmountContainer>
                         
