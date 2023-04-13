@@ -211,7 +211,7 @@ const ProductAmountContainer=styled.div`
 
 const ProductAmount=styled.div`
 
-    margin: 5px;
+    margin: 0 10px 0 10px;
 
     ${mobile({margin:"5px 15px"})};
 
@@ -402,7 +402,7 @@ const Cart = () => {
                             <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch1({type:'incr'})}/>
 
                             {/* <FontAwesomeIcon icon="fa-duotone fa-trash" /> */}
-                            <FontAwesomeIcon icon={faTrash} style={{fontSize:"18px",cursor:"pointer",color:"#d87034",marginLeft:"6px"}} onClick={()=>dispatch1({type:'del'})} />
+                            <FontAwesomeIcon icon={faTrash} style={{fontSize:"18px",cursor:"pointer",color:"#d87034",marginLeft:"25%"}} onClick={()=>dispatch1({type:'del'})} />
 
                         </ProductAmountContainer>
 
@@ -444,7 +444,7 @@ const Cart = () => {
 
                         <Add style={{fontSize:"18px",cursor:"pointer",color:"#f85c02"} } onClick={()=> dispatch2({type:'incr'})}/>
 
-                        <FontAwesomeIcon icon={faTrash} style={{fontSize:"18px",cursor:"pointer",color:"#d87034",marginLeft:"6px"}} onClick={()=>dispatch2({type:'del'})}/>
+                        <FontAwesomeIcon icon={faTrash} style={{fontSize:"18px",cursor:"pointer",color:"#d87034",marginLeft:"25%"}} onClick={()=>dispatch2({type:'del'})}/>
 
                         </ProductAmountContainer>
                         
