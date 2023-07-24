@@ -365,7 +365,6 @@ const Cart = () => {
             {!emptyCart &&< TopButton type="filled">Checkout now</TopButton>}
 
         </Top>
-
         { !emptyCart && <Bottom >
 
             <Info>
